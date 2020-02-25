@@ -1,131 +1,146 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @post.name %>
-</p>
 
-<p>
-  <strong>Code:</strong>
-  <%= @post.code %>
-</p>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+  }
 
-<p>
-  <strong>Gtin number:</strong>
-  <%= @post.gtin_number %>
-</p>
+  table, th, td {
+    border: solid 1px #000;
+    padding: 10px;
+  }
 
-<p>
-  <strong>Pack:</strong>
-  <%= @post.pack %>
-</p>
+  table {
+    border-collapse:collapse;
+    caption-side:bottom;
+  }
 
-<p>
-  <strong>Pack description:</strong>
-  <%= @post.pack_description %>
-</p>
+  caption {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+  }
+</style>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @post.brand %>
-</p>
 
-<p>
-  <strong>Brand onwer:</strong>
-  <%= @post.brand_onwer %>
-</p>
+<table>
 
-<p>
-  <strong>Gpc description:</strong>
-  <%= @post.gpc_description %>
-</p>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+    <th>GTIN Number</th>
+    <th>Brand</th>
+    <th>Brand onwer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:name) %></td>
+    <td><%= @post.try(:code) %></td>
+    <td><%= @post.try(:gtin_number) %></td>
+    <td><%= @post.try(:brand) %></td>
+    <td><%= @post.try(:brand_onwer) %></td>
+  </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Gross weight:</strong>
-  <%= @post.gross_weight %>
-</p>
 
-<p>
-  <strong>Country of origin:</strong>
-  <%= @post.country_of_origin %>
-</p>
+<br/>
+<h3> Package Details </h3>
+<table>
 
-<p>
-  <strong>Kosher:</strong>
-  <%= @post.kosher %>
-</p>
+  <thead>
+  <tr>
+    <th>Pack</th>
+    <th>Package Description</th>
+    <th>Gpc description</th>
+    <th>Gross weight</th>
+    <th>Country of origin</th>
+    <th>Kosher</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:pack) %></td>
+    <td><%= @post.try(:pack_description) %></td>
+    <td><%= @post.try(:gpc_description) %></td>
+    <td><%= @post.try(:gross_weight) %></td>
+    <td><%= @post.try(:country_of_origin) %></td>
+    <td><%= @post.try(:kosher) %></td>
+  </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Child nutrition:</strong>
-  <%= @post.child_nutrition %>
-</p>
+<br>
 
-<p>
-  <strong>Shipping length:</strong>
-  <%= @post.shipping_length %>
-</p>
+<h3> Shipping Information </h3>
 
-<p>
-  <strong>Shipping width:</strong>
-  <%= @post.shipping_width %>
-</p>
+<table>
 
-<p>
-  <strong>Shipping height:</strong>
-  <%= @post.shipping_height %>
-</p>
+  <thead>
+  <tr>
+    <th>Shipping length</th>
+    <th>Shipping width</th>
+    <th>Shipping height</th>
+    <th>Shipping volumn</th>
+    <th>Shelf life</th>
+    <th>Storage</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:shipping_length) %></td>
+    <td><%= @post.try(:shipping_width) %></td>
+    <td><%= @post.try(:shipping_height) %></td>
+    <td><%= @post.try(:shipping_volumn) %></td>
+    <td><%= @post.try(:shelf_life) %></td>
+    <td><%= @post.try(:storage) %></td>
+  </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Shipping volumn:</strong>
-  <%= @post.shipping_volumn %>
-</p>
 
-<p>
-  <strong>Shelf life:</strong>
-  <%= @post.shelf_life %>
-</p>
 
-<p>
-  <strong>Storage:</strong>
-  <%= @post.storage %>
-</p>
 
-<p>
-  <strong>Serving size:</strong>
-  <%= @post.serving_size %>
-</p>
+<h3> Nutrition Information </h3>
 
-<p>
-  <strong>Calories:</strong>
-  <%= @post.calories %>
-</p>
+<table>
 
-<p>
-  <strong>Fat:</strong>
-  <%= @post.fat %>
-</p>
+  <thead>
+  <tr>
+    <th>Child nutrition</th>
+    <th>Serving size</th>
+    <th>Calories</th>
+    <th>Fat</th>
+    <th>Cholesterol</th>
+    <th>Sodium</th>
+    <th>Carbohydrate</th>
+    <th>Protein</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:child_nutrition) %></td>
+    <td><%= @post.try(:serving_size) %></td>
+    <td><%= @post.try(:calories) %></td>
+    <td><%= @post.try(:fat) %></td>
+    <td><%= @post.try(:cholesterol) %></td>
+    <td><%= @post.try(:sodium) %></td>
+    <td><%= @post.try(:carbohydrate) %></td>
+    <td><%= @post.try(:protein) %></td>
+  </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Cholesterol:</strong>
-  <%= @post.cholesterol %>
-</p>
+<p>Download pdf file for this</p>
+<%= link_to "Download PDF", get_pdf_post_path(@post) %>
 
-<p>
-  <strong>Sodium:</strong>
-  <%= @post.sodium %>
-</p>
-
-<p>
-  <strong>Carbohydrate:</strong>
-  <%= @post.carbohydrate %>
-</p>
-
-<p>
-  <strong>Protein:</strong>
-  <%= @post.protein %>
-</p>
-
-<%= link_to "User Job analysis", get_pdf_posts_path %>
-
+<br>
+<br>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

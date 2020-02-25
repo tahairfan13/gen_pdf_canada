@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :posts do
-    collection do
+    member do
       get :get_pdf
     end
   end

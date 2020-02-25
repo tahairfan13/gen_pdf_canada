@@ -1,1 +1,129 @@
-<h1>I M A PDF</h1>
+<style>
+
+  table, th, td {
+    border: solid 1px #000;
+    padding: 10px;
+  }
+
+  table {
+    border-collapse:collapse;
+    caption-side:bottom;
+  }
+
+  caption {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+  }
+</style>
+
+
+<table>
+
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+    <th>GTIN Number</th>
+    <th>Brand</th>
+    <th>Brand onwer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:name) %></td>
+    <td><%= @post.try(:code) %></td>
+    <td><%= @post.try(:gtin_number) %></td>
+    <td><%= @post.try(:brand) %></td>
+    <td><%= @post.try(:brand_onwer) %></td>
+  </tr>
+  </tbody>
+</table>
+
+
+<br/>
+<h3 style="text-align: center"> Package Details </h3>
+<table>
+
+  <thead>
+  <tr>
+    <th>Pack</th>
+    <th>Package Description</th>
+    <th>Gpc description</th>
+    <th>Gross weight</th>
+    <th>Country of origin</th>
+    <th>Kosher</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:pack) %></td>
+    <td><%= @post.try(:pack_description) %></td>
+    <td><%= @post.try(:gpc_description) %></td>
+    <td><%= @post.try(:gross_weight) %></td>
+    <td><%= @post.try(:country_of_origin) %></td>
+    <td><%= @post.try(:kosher) %></td>
+  </tr>
+  </tbody>
+</table>
+
+<br>
+
+<h3 style="text-align: center"> Shipping Information </h3>
+
+<table>
+
+  <thead>
+  <tr>
+    <th>Shipping length</th>
+    <th>Shipping width</th>
+    <th>Shipping height</th>
+    <th>Shipping volumn</th>
+    <th>Shelf life</th>
+    <th>Storage</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:shipping_length) %></td>
+    <td><%= @post.try(:shipping_width) %></td>
+    <td><%= @post.try(:shipping_height) %></td>
+    <td><%= @post.try(:shipping_volumn) %></td>
+    <td><%= @post.try(:shelf_life) %></td>
+    <td><%= @post.try(:storage) %></td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+<h3 style="text-align: center"> Nutrition Information </h3>
+
+<table>
+
+  <thead>
+  <tr>
+    <th>Child nutrition</th>
+    <th>Serving size</th>
+    <th>Calories</th>
+    <th>Fat</th>
+    <th>Cholesterol</th>
+    <th>Sodium</th>
+    <th>Carbohydrate</th>
+    <th>Protein</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:child_nutrition) %></td>
+    <td><%= @post.try(:serving_size) %></td>
+    <td><%= @post.try(:calories) %></td>
+    <td><%= @post.try(:fat) %></td>
+    <td><%= @post.try(:cholesterol) %></td>
+    <td><%= @post.try(:sodium) %></td>
+    <td><%= @post.try(:carbohydrate) %></td>
+    <td><%= @post.try(:protein) %></td>
+  </tr>
+  </tbody>
+</table>
