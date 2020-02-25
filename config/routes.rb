@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'posts#root'
   resources :posts do
     member do
       get :get_pdf
