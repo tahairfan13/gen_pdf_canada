@@ -1,0 +1,131 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @post.code %>
+</p>
+
+<p>
+  <strong>Gtin number:</strong>
+  <%= @post.gtin_number %>
+</p>
+
+<p>
+  <strong>Pack:</strong>
+  <%= @post.pack %>
+</p>
+
+<p>
+  <strong>Pack description:</strong>
+  <%= @post.pack_description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @post.brand %>
+</p>
+
+<p>
+  <strong>Brand onwer:</strong>
+  <%= @post.brand_onwer %>
+</p>
+
+<p>
+  <strong>Gpc description:</strong>
+  <%= @post.gpc_description %>
+</p>
+
+<p>
+  <strong>Gross weight:</strong>
+  <%= @post.gross_weight %>
+</p>
+
+<p>
+  <strong>Country of origin:</strong>
+  <%= @post.country_of_origin %>
+</p>
+
+<p>
+  <strong>Kosher:</strong>
+  <%= @post.kosher %>
+</p>
+
+<p>
+  <strong>Child nutrition:</strong>
+  <%= @post.child_nutrition %>
+</p>
+
+<p>
+  <strong>Shipping length:</strong>
+  <%= @post.shipping_length %>
+</p>
+
+<p>
+  <strong>Shipping width:</strong>
+  <%= @post.shipping_width %>
+</p>
+
+<p>
+  <strong>Shipping height:</strong>
+  <%= @post.shipping_height %>
+</p>
+
+<p>
+  <strong>Shipping volumn:</strong>
+  <%= @post.shipping_volumn %>
+</p>
+
+<p>
+  <strong>Shelf life:</strong>
+  <%= @post.shelf_life %>
+</p>
+
+<p>
+  <strong>Storage:</strong>
+  <%= @post.storage %>
+</p>
+
+<p>
+  <strong>Serving size:</strong>
+  <%= @post.serving_size %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <%= @post.calories %>
+</p>
+
+<p>
+  <strong>Fat:</strong>
+  <%= @post.fat %>
+</p>
+
+<p>
+  <strong>Cholesterol:</strong>
+  <%= @post.cholesterol %>
+</p>
+
+<p>
+  <strong>Sodium:</strong>
+  <%= @post.sodium %>
+</p>
+
+<p>
+  <strong>Carbohydrate:</strong>
+  <%= @post.carbohydrate %>
+</p>
+
+<p>
+  <strong>Protein:</strong>
+  <%= @post.protein %>
+</p>
+
+<%= link_to "User Job analysis", get_pdf_posts_path %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

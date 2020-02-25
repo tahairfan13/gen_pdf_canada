@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Gtin number</th>
+      <th>Pack</th>
+      <th>Pack description</th>
+      <th>Brand</th>
+      <th>Brand onwer</th>
+      <th>Gpc description</th>
+      <th>Gross weight</th>
+      <th>Country of origin</th>
+      <th>Kosher</th>
+      <th>Child nutrition</th>
+      <th>Shipping length</th>
+      <th>Shipping width</th>
+      <th>Shipping height</th>
+      <th>Shipping volumn</th>
+      <th>Shelf life</th>
+      <th>Storage</th>
+      <th>Serving size</th>
+      <th>Calories</th>
+      <th>Fat</th>
+      <th>Cholesterol</th>
+      <th>Sodium</th>
+      <th>Carbohydrate</th>
+      <th>Protein</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.name %></td>
+        <td><%= post.code %></td>
+        <td><%= post.gtin_number %></td>
+        <td><%= post.pack %></td>
+        <td><%= post.pack_description %></td>
+        <td><%= post.brand %></td>
+        <td><%= post.brand_onwer %></td>
+        <td><%= post.gpc_description %></td>
+        <td><%= post.gross_weight %></td>
+        <td><%= post.country_of_origin %></td>
+        <td><%= post.kosher %></td>
+        <td><%= post.child_nutrition %></td>
+        <td><%= post.shipping_length %></td>
+        <td><%= post.shipping_width %></td>
+        <td><%= post.shipping_height %></td>
+        <td><%= post.shipping_volumn %></td>
+        <td><%= post.shelf_life %></td>
+        <td><%= post.storage %></td>
+        <td><%= post.serving_size %></td>
+        <td><%= post.calories %></td>
+        <td><%= post.fat %></td>
+        <td><%= post.cholesterol %></td>
+        <td><%= post.sodium %></td>
+        <td><%= post.carbohydrate %></td>
+        <td><%= post.protein %></td>
+        <% link = "posts/1/get_pdf" %>
+        <a href="<%= link %>" target="_blank">ajj</a>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

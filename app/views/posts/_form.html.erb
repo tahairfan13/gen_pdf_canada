@@ -1,0 +1,106 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:'form-control' %>
+
+    <%= form.label :code %>
+    <%= form.number_field :code , class:'form-control' %>
+
+    <%= form.label :gtin_number %>
+    <%= form.text_field :gtin_number, class:'form-control' %>
+
+    <%= form.label :brand %>
+    <%= form.text_field :brand, class:'form-control' %>
+
+    <%= form.label :brand_onwer %>
+    <%= form.text_field :brand_onwer, class:'form-control' %>
+  </div>
+
+  <h3 style="text-align: center"> Package Details </h3>
+
+  <div class="form-group">
+      <%= form.label :pack %>
+      <%= form.text_field :pack, class:'form-control' %>
+
+      <%= form.label :pack_description %>
+      <%= form.text_field :pack_description, class:'form-control' %>
+
+      <%= form.label :gpc_description %>
+      <%= form.text_field :gpc_description, class:'form-control' %>
+
+      <%= form.label :gross_weight %>
+      <%= form.text_field :gross_weight, class:'form-control' %>
+
+      <%= form.label :country_of_origin %>
+      <%= form.text_field :country_of_origin, class:'form-control' %>
+
+      <%= form.label :kosher %>
+      <%= form.check_box :kosher, class:'form-control' %>
+  </div>
+
+
+  <h3 style="text-align: center"> Shipping Information </h3>
+
+  <div class="form-grouo">
+      <%= form.label :shipping_length %>
+      <%= form.text_field :shipping_length , class:'form-control' %>
+
+      <%= form.label :shipping_width %>
+      <%= form.text_field :shipping_width, class:'form-control' %>
+
+      <%= form.label :shipping_height %>
+      <%= form.text_field :shipping_height, class:'form-control' %>
+
+      <%= form.label :shipping_volumn %>
+      <%= form.text_field :shipping_volumn, class:'form-control' %>
+
+      <%= form.label :shelf_life %>
+      <%= form.text_field :shelf_life, class:'form-control' %>
+
+      <%= form.label :storage %>
+      <%= form.text_field :storage, class:'form-control' %>
+  </div>
+
+  <h3 style="text-align: center"> Nutrition Information </h3>
+  <div class="form-group">
+    <%= form.label :child_nutrition %>
+    <%= form.text_field :child_nutrition , class:'form-control' %>
+
+    <%= form.label :serving_size %>
+    <%= form.number_field :serving_size, class:'form-control' %>
+
+    <%= form.label :calories %>
+    <%= form.number_field :calories, class:'form-control' %>
+
+    <%= form.label :fat %>
+    <%= form.text_field :fat, class:'form-control' %>
+
+    <%= form.label :cholesterol %>
+    <%= form.text_field :cholesterol, class:'form-control' %>
+
+    <%= form.label :sodium %>
+    <%= form.text_field :sodium, class:'form-control' %>
+
+    <%= form.label :carbohydrate %>
+    <%= form.text_field :carbohydrate, class:'form-control' %>
+
+    <%= form.label :protein %>
+    <%= form.text_field :protein, class:'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  gtin: MyString
+  pack: MyString
+  pack_description: MyString
+  brand: MyString
+  brand_onwer: MyString
+  cpc_description: MyString
+  gross_weight: 1.5
+  net_weight: 1.5
+  country: MyString
+  kosher: false
+
+two:
+  code: MyString
+  gtin: MyString
+  pack: MyString
+  pack_description: MyString
+  brand: MyString
+  brand_onwer: MyString
+  cpc_description: MyString
+  gross_weight: 1.5
+  net_weight: 1.5
+  country: MyString
+  kosher: false

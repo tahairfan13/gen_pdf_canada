@@ -1,0 +1,55 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  code: 1
+  gtin_number: MyString
+  pack: MyString
+  pack_description: MyString
+  brand: MyString
+  brand_onwer: MyString
+  gpc_description: MyString
+  gross_weight: 1.5
+  country_of_origin: MyString
+  kosher: false
+  child_nutrition: MyString
+  shipping_length: 1.5
+  shipping_width: 1.5
+  shipping_height: 1.5
+  shipping_volumn: 1.5
+  shelf_life: 1.5
+  storage: MyString
+  serving_size: 1
+  calories: 1
+  fat: 1.5
+  cholesterol: 1.5
+  sodium: 1.5
+  carbohydrate: 1.5
+  protein: 1.5
+
+two:
+  name: MyString
+  code: 1
+  gtin_number: MyString
+  pack: MyString
+  pack_description: MyString
+  brand: MyString
+  brand_onwer: MyString
+  gpc_description: MyString
+  gross_weight: 1.5
+  country_of_origin: MyString
+  kosher: false
+  child_nutrition: MyString
+  shipping_length: 1.5
+  shipping_width: 1.5
+  shipping_height: 1.5
+  shipping_volumn: 1.5
+  shelf_life: 1.5
+  storage: MyString
+  serving_size: 1
+  calories: 1
+  fat: 1.5
+  cholesterol: 1.5
+  sodium: 1.5
+  carbohydrate: 1.5
+  protein: 1.5

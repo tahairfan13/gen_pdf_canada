@@ -1,0 +1,2 @@
+json.extract! post, :id, :name, :code, :gtin_number, :pack, :pack_description, :brand, :brand_onwer, :gpc_description, :gross_weight, :country_of_origin, :kosher, :child_nutrition, :shipping_length, :shipping_width, :shipping_height, :shipping_volumn, :shelf_life, :storage, :serving_size, :calories, :fat, :cholesterol, :sodium, :carbohydrate, :protein, :created_at, :updated_at
+json.url post_url(post, format: :json)
