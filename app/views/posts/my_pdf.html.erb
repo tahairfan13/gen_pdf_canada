@@ -1,23 +1,48 @@
 <style>
 
-  table, th, td {
-    border: solid 1px #000;
-    padding: 10px;
+  html,
+  body {
+    height: 80%;
   }
+
+  /*body {*/
+  /*margin: 5rem;*/
+  /*background: linear-gradient(45deg, #49a09d, #5f2c82);*/
+  /*font-family: sans-serif;*/
+  /*font-weight: 100;*/
+  /*}*/
 
   table {
-    border-collapse:collapse;
-    caption-side:bottom;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
   }
 
-  caption {
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 5px;
+  th,
+  td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+  }
+
+  th {
+    text-align: center;
+  }
+  th {
+    background-color: #55608f;
+    color: white;
   }
 </style>
 
 
+<div>
+  <%= wicked_pdf_image_tag "para.jpg", style: "width:150px; height: 150px" %>
+</div>
+
+<br/>
+<br/>
+<br/>
 <table>
 
   <thead>
