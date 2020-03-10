@@ -77,6 +77,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :code, :gtin_number, :pack, :pack_description, :brand, :brand_onwer, :gpc_description, :gross_weight, :country_of_origin, :kosher, :child_nutrition, :shipping_length, :shipping_width, :shipping_height, :shipping_volumn, :shelf_life, :storage, :serving_size, :calories, :fat, :cholesterol, :sodium, :carbohydrate, :protein)
+      params.require(:post).permit(:name, :code, :gtin_number, :pack, :pack_description, :brand, :brand_onwer, :gpc_description, :gross_weight, :country_of_origin, :kosher, :child_nutrition, :shipping_length, :shipping_width, :shipping_height, :shipping_volumn, :shelf_life, :storage, :serving_size, :calories, :fat, :cholesterol, :sodium, :carbohydrate, :protein, :availability_date, :first_order_date, :first_ship_date, :product_description_english, :serving_description_english, :ingredients_description_english, :benefits_description_english)
     end
 end

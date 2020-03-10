@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 2020_02_25_111030) do
     t.float "sodium"
     t.float "carbohydrate"
     t.float "protein"
+    t.datetime "availability_date"
+    t.datetime "first_order_date"
+    t.datetime "first_ship_date"
+    t.string "product_description_english"
+    t.string "serving_description_english"
+    t.string "ingredients_description_english"
+    t.string "benefits_description_english"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

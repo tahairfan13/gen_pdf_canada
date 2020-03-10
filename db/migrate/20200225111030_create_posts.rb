@@ -26,6 +26,13 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.float :sodium
       t.float :carbohydrate
       t.float :protein
+      t.datetime :availability_date
+      t.datetime :first_order_date
+      t.datetime :first_ship_date
+      t.string :product_description_english
+      t.string :serving_description_english
+      t.string :ingredients_description_english
+      t.string :benefits_description_english
 
       t.timestamps
     end

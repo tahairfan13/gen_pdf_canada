@@ -137,6 +137,59 @@
   </tbody>
 </table>
 
+
+<h3>Information </h3>
+
+<table>
+
+  <thead>
+  <tr>
+    <th>availability date</th>
+    <th>first order date</th>
+    <th>first ship date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @post.try(:availability_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= @post.try(:first_order_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= @post.try(:first_ship_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+  </tr>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<h3>product description </h3>
+<p>
+<%= @post.try(:product_description_english) %>
+</p>
+
+<h3>serving description </h3>
+<p>
+<%= @post.try(:serving_description_english) %>
+</p>
+
+<h3>ingredients description </h3>
+<p>
+<%= @post.try(:ingredients_description_english) %>
+</p>
+
+<h3>benefits description </h3>
+<p>
+<%= @post.try(:benefits_description_english) %>
+</p>
+
+<br>
+<br>
+
+
+
+
+
+
 <p>Download pdf file for this</p>
 <%= link_to "Download PDF", get_pdf_post_path(@post) %>
 
