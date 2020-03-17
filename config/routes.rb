@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'posts#root'
+  devise_for :users
+  root 'home#root'
   resources :posts do
     member do
       get :get_pdf
