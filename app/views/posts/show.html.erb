@@ -1,28 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-
 <style>
+
+  html,
   body {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    color: #333333;
+    height: 80%;
   }
 
-  table, th, td {
-    border: solid 1px #000;
-    padding: 10px;
-  }
+  /*body {*/
+  /*margin: 5rem;*/
+  /*background: linear-gradient(45deg, #49a09d, #5f2c82);*/
+  /*font-family: sans-serif;*/
+  /*font-weight: 100;*/
+  /*}*/
 
   table {
-    border-collapse:collapse;
-    caption-side:bottom;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
   }
 
-  caption {
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 5px;
+  th,
+  td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+  }
+
+  th {
+    text-align: center;
+  }
+  th {
+    background-color: #55608f;
+    color: white;
   }
 </style>
 
@@ -32,7 +43,7 @@
   <thead>
   <tr>
     <th>Name</th>
-    <th>Code</th>
+    <th>Type</th>
     <th>GTIN Number</th>
     <th>Brand</th>
     <th>Brand onwer</th>
@@ -40,9 +51,9 @@
   </thead>
   <tbody>
   <tr>
-    <td><%= @post.try(:name) %></td>
-    <td><%= @post.try(:code) %></td>
-    <td><%= @post.try(:gtin_number) %></td>
+    <td><%= @post.try(:product).try(:name) %></td>
+    <td><%= @post.try(:product).try(:product_type) %></td>
+    <td><%= @post.try(:product).try(:gtin) %></td>
     <td><%= @post.try(:brand) %></td>
     <td><%= @post.try(:brand_onwer) %></td>
   </tr>

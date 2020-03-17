@@ -6,25 +6,19 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
   def show
   end
 
-  # GET /posts/new
   def new
     @post = Post.new
   end
 
-  # GET /posts/1/edit
   def edit
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -40,8 +34,6 @@ class PostsController < ApplicationController
     render :pdf => "Report Pdf", :layout => false, :template => "/posts/my_pdf"
   end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
       if @post.update(post_params)
@@ -54,8 +46,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post.destroy
     respond_to do |format|
@@ -65,13 +55,11 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :code, :gtin_number, :pack, :pack_description, :brand, :brand_onwer, :gpc_description, :gross_weight, :country_of_origin, :kosher, :child_nutrition, :shipping_length, :shipping_width, :shipping_height, :shipping_volumn, :shelf_life, :storage, :serving_size, :calories, :fat, :cholesterol, :sodium, :carbohydrate, :protein, :availability_date, :first_order_date, :first_ship_date, :product_description_english, :serving_description_english, :ingredients_description_english, :benefits_description_english)
+      params.require(:post).permit(:product_id, :pack, :pack_description, :brand, :brand_onwer, :gpc_description, :gross_weight, :country_of_origin, :kosher, :child_nutrition, :shipping_length, :shipping_width, :shipping_height, :shipping_volumn, :shelf_life, :storage, :serving_size, :calories, :fat, :cholesterol, :sodium, :carbohydrate, :protein, :availability_date, :first_order_date, :first_ship_date, :product_description_english, :serving_description_english, :ingredients_description_english, :benefits_description_english)
     end
 end

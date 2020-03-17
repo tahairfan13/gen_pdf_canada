@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Code</th>
       <th>Gtin number</th>
       <th colspan="4"></th>
     </tr>
@@ -13,9 +12,8 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.name %></td>
-        <td><%= post.code %></td>
-        <td><%= post.gtin_number %></td>
+        <td><%= post.try(:product).try(:name) %></td>
+        <td><%= post.try(:product).try(:gtin) %></td>
         <td><%= link_to "Download PDF", get_pdf_post_path(post), class: 'btn btn-success', style: 'color:#fff' %></td>
         <td><%= link_to 'View More information', post, class: "btn btn-primary", style: 'color:#fff' %></td>
         <td><%= link_to 'Edit', edit_post_path(post), class: "btn btn-info", style: 'color:#fff' %></td>

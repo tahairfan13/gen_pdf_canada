@@ -1,3 +1,5 @@
 class Post < ApplicationRecord
-  validates_presence_of :name, :code, :gtin_number, :brand, :brand_onwer
+  belongs_to :product
+  belongs_to :user
+  validates_presence_of :brand, :brand_onwer
 end

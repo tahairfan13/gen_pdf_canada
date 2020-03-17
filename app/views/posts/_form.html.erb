@@ -12,14 +12,8 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class:'form-control' %>
 
-    <%= form.label :code %>
-    <%= form.number_field :code , class:'form-control' %>
-
-    <%= form.label :gtin_number %>
-    <%= form.text_field :gtin_number, class:'form-control' %>
+    <%= form.collection_select(:product_id,  Product.is_unapproved,  :id, :name) %>
 
     <%= form.label :brand %>
     <%= form.text_field :brand, class:'form-control' %>

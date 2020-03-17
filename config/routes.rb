@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :products
   devise_for :users
   root 'home#root'
   resources :posts do
