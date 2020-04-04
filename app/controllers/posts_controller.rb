@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :get_pdf]
-  before_action :authenticate_user!
 
   def index
-    @posts = Post.all
+    @posts = Post.where(user: current_user)
   end
 
   def show
@@ -18,6 +17,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    p = Product.find_by(id: post_params[:product_id])
+    if p
+      p.update(approved: true)
+    end
     @post.user = current_user
     respond_to do |format|
       if @post.save
