@@ -79,6 +79,6 @@ class MarketingProductsController < ApplicationController
     end
 
     def marketing_product_params
-      params.require(:marketing_product).permit(:first_order_date, :first_ship_date, :availability_date, :product_description, :serving_description, :ingredients_description, :benefits_description, :product_id)
+      params.require(:marketing_product).permit(:first_order_date, :first_ship_date, :availability_date, :product_description,:product_description_french, :serving_description, :serving_description_french, :ingredients_description, :ingredients_description_french, :benefits_description, :benefits_description_french, :product_id)
     end
 end

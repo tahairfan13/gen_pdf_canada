@@ -37,7 +37,9 @@
 <br/>
 <br/>
 
-<%= render partial: "products_view" %>
+<% if @product %>
+  <%= render partial: "products/product_list", locals: {product: @product} %>
+<% end %>
 
 <br/>
 <br/>
@@ -68,13 +70,19 @@
       <thead>
       <tr>
         <th>
-        Serving description
+          Serving description English
+        </th>
+        <th>
+          Serving description french
         </th>
       </tr>
       </thead>
       <tbody>
         <td>
           <%= @marketing_product.serving_description %>
+        </td>
+        <td>
+          <%= @marketing_product.serving_description_french %>
         </td>
       </tbody>
     </table>
@@ -87,13 +95,19 @@
       <thead>
       <tr>
         <th>
-        Ingredients description
+          Ingredients description
+        </th>
+        <th>
+          Ingredients description french
         </th>
       </tr>
       </thead>
       <tbody>
       <td>
         <%= @marketing_product.ingredients_description %>
+      </td>
+      <td>
+        <%= @marketing_product.ingredients_description_french %>
       </td>
       </tbody>
     </table>
@@ -111,11 +125,17 @@
         <th>
           Benefits description
         </th>
+        <th>
+          Benefits description French
+        </th>
       </tr>
       </thead>
       <tbody>
       <td>
         <%= @marketing_product.benefits_description %>
+      </td>
+      <td>
+        <%= @marketing_product.benefits_description_french %>
       </td>
       </tbody>
     </table>
@@ -131,11 +151,17 @@
         <th>
           Product description
         </th>
+        <th>
+          Product description french
+        </th>
       </tr>
       </thead>
       <tbody>
       <td>
         <%= @marketing_product.product_description %>
+      </td>
+      <td>
+        <%= @marketing_product.product_description_french %>
       </td>
       </tbody>
     </table>
