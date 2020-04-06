@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    marketing_index_path
+    if resource.role == 0
+      products_path
+    elsif resource.role == 1
+      marketing_index_path
+    end
   end
 end
