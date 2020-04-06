@@ -1,45 +1,141 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First order date:</strong>
-  <%= @marketing_product.first_order_date %>
-</p>
+<style>
 
-<p>
-  <strong>First ship date:</strong>
-  <%= @marketing_product.first_ship_date %>
-</p>
+  html,
+  body {
+    height: 80%;
+  }
 
-<p>
-  <strong>Availability date:</strong>
-  <%= @marketing_product.availability_date %>
-</p>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
 
-<p>
-  <strong>:</strong>
-  <%# @marketing_product. %>
-</p>
+  th,
+  td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+  }
 
-<p>
-  <strong>Serving description:</strong>
-  <%= @marketing_product.serving_description %>
-</p>
+  th {
+    text-align: center;
+  }
+  th {
+    background-color: #55608f;
+    color: white;
+  }
+</style>
 
-<p>
-  <strong>Ingredients description:</strong>
-  <%= @marketing_product.ingredients_description %>
-</p>
+<div class="container">
+<%= render partial: "products_view" %>
 
-<p>
-  <strong>Benefits description:</strong>
-  <%= @marketing_product.benefits_description %>
-</p>
+<br/>
+<br/>
+<br/>
 
+<table>
+  <thead>
+  <tr>
+    <th>First order date</th>
+    <th>First ship date</th>
+    <th>Availability date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @marketing_product.try(:first_order_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= @marketing_product.try(:first_ship_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= @marketing_product.try(:availability_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+  </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Product:</strong>
-  <%= @marketing_product.product %>
-</p>
+<div class="row">
+  <br>
+  <br>
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th>
+          Serving description
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <td>
+        <%= @marketing_product.serving_description %>
+      </td>
+      </tbody>
+    </table>
+  </div>
 
-<%= link_to 'Edit', edit_marketing_product_path(@marketing_product) %> |
-<%= link_to 'Back', marketing_products_path %>
+  <br>
+  <br>
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th>
+          Ingredients description
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <td>
+        <%= @marketing_product.ingredients_description %>
+      </td>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="row">
+  <br>
+  <br>
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th>
+          Benefits description
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <td>
+        <%= @marketing_product.benefits_description %>
+      </td>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th>
+          Product description
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <td>
+        <%= @marketing_product.product_description %>
+      </td>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+  <%= link_to 'Back', marketing_index_path, class: 'btn btn-success', style: 'color: #fff' %>
+</div>
+</div>
