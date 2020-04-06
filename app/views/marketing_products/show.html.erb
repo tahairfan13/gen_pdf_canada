@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First order date:</strong>
+  <%= @marketing_product.first_order_date %>
+</p>
+
+<p>
+  <strong>First ship date:</strong>
+  <%= @marketing_product.first_ship_date %>
+</p>
+
+<p>
+  <strong>Availability date:</strong>
+  <%= @marketing_product.availability_date %>
+</p>
+
+<p>
+  <strong>:</strong>
+  <%# @marketing_product. %>
+</p>
+
+<p>
+  <strong>Serving description:</strong>
+  <%= @marketing_product.serving_description %>
+</p>
+
+<p>
+  <strong>Ingredients description:</strong>
+  <%= @marketing_product.ingredients_description %>
+</p>
+
+<p>
+  <strong>Benefits description:</strong>
+  <%= @marketing_product.benefits_description %>
+</p>
+
+
+<p>
+  <strong>Product:</strong>
+  <%= @marketing_product.product %>
+</p>
+
+<%= link_to 'Edit', edit_marketing_product_path(@marketing_product) %> |
+<%= link_to 'Back', marketing_products_path %>

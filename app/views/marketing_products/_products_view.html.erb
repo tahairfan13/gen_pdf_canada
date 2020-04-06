@@ -1,0 +1,21 @@
+<div class="row">
+  <% if @product %>
+    <%= render partial: "products/product_list", locals: {product: @product} %>
+  <% end %>
+
+  <% if @product and @product.parent %>
+    <br>
+    <h2 style="text-align: center"> Parent </h2>
+    <br>
+    <%= render partial: "products/product_list", locals: {product: @product.parent} %>
+  <% end %>
+
+  <% if @product and  @product.children.length > 0 %>
+    <br>
+    <h2 style="text-align: center"> Children </h2>
+    <br>
+    <% @product.children.each do |product| %>
+      <%= render partial: "products/product_list", locals: {product: product} %>
+    <% end %>
+  <% end %>
+</div>

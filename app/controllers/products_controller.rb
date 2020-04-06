@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @parent_product = @product.parent
+    @children_products = @product.children
   end
 
   def new
@@ -18,7 +20,14 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
+    if product_params[:parent_gtin]
+      parent_product = Product.find_by(gtin: product_params[:parent_gtin])
+      if parent_product
+        @product.parent = parent_product
+      else
+        @product.parent_gtin = ""
+      end
+    end
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }

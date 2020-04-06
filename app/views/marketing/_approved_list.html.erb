@@ -1,0 +1,21 @@
+<% if market_products.length > 0 %>
+  <% market_products.each do |product| %>
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Product Type</th>
+        <th>GTIN Number</th>
+        <th colspan="2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= product.try(:product).try(:name) %></td>
+        <td><%= product.try(:product).try(:product_type) %></td>
+        <td><%= product.try(:product).try(:gtin) %></td>
+      </tr>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>

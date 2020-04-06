@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :marketing_products do
+    get 'reject'
+  end
+  get 'marketing/index'
   resources :products
   devise_for :users
   root 'home#root'

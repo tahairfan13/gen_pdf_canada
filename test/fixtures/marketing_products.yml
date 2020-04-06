@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_order_date: 2020-04-06 18:59:22
+  first_ship_date: 2020-04-06 18:59:22
+  availability_date: 2020-04-06 18:59:22
+  : 
+  serving_description: MyString
+  ingredients_description: MyString
+  benefits_description: MyString
+  user: 
+  product: 
+
+two:
+  first_order_date: 2020-04-06 18:59:22
+  first_ship_date: 2020-04-06 18:59:22
+  availability_date: 2020-04-06 18:59:22
+  : 
+  serving_description: MyString
+  ingredients_description: MyString
+  benefits_description: MyString
+  user: 
+  product: 
