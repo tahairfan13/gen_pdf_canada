@@ -47,9 +47,9 @@
   </thead>
   <tbody>
   <tr>
-    <td><%= @marketing_product.try(:first_order_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
-    <td><%= @marketing_product.try(:first_ship_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
-    <td><%= @marketing_product.try(:availability_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= @marketing_product.try(:first_order_date).try(:strftime, "%m/%d/%Y") %></td>
+    <td><%= @marketing_product.try(:first_ship_date).try(:strftime, "%m/%d/%Y") %></td>
+    <td><%= @marketing_product.try(:availability_date).try(:strftime, "%m/%d/%Y") %></td>
   </tr>
   </tbody>
 </table>
