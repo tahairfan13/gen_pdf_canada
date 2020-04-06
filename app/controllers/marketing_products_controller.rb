@@ -49,6 +49,12 @@ class MarketingProductsController < ApplicationController
     end
   end
 
+  def market_pdf
+    @marketing_product = MarketingProduct.find(params[:id])
+    @product = @marketing_product.product
+    render :pdf => "Report Pdf", :layout => false, :template => "marketing_products/market_pdf"
+  end
+
   def reject
     @product = Product.find_by(id: params[:marketing_product_id])
     if @product and @product.update(ignore: true)

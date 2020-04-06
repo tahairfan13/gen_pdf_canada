@@ -45,9 +45,9 @@
   </div>
 
   <div class="actions">
-    <%= form.submit class:'btn btn-primary' %>
+    <%= form.submit "Submit", class:'btn btn-primary' %>
     <% if @product %>
-      <%= link_to "reject product", marketing_product_reject_path(@product) %>
+      <%= link_to "reject product", marketing_product_reject_path(@product), class: 'btn btn-danger', style: 'color: #fff' %>
     <% end %>
   </div>
 

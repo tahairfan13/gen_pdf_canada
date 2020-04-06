@@ -6,7 +6,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active"><%= link_to "Add a product", new_product_path, class:"nav-link" %></li>
         <% if current_user %>
-          <li class="nav-item"><%= link_to "Approve Product", new_post_path, class:"nav-link" %></li>
+          <li class="nav-item"><%= link_to "Market dashboard", marketing_index_path, class:"nav-link" %></li>
           <li class="nav-item"><%= link_to('Logout', destroy_user_session_path, method: :delete, class:"nav-link") %></li>
         <% else %>
           <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class:"nav-link" %></li>

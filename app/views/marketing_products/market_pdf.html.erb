@@ -1,0 +1,144 @@
+<style>
+
+  html,
+  body {
+    height: 80%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+
+  th,
+  td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+  }
+
+  th {
+    text-align: center;
+  }
+  th {
+    background-color: #55608f;
+    color: white;
+  }
+</style>
+
+
+<div>
+  <%= wicked_pdf_image_tag "logo.png", style: "width:350px; height: 150px" %>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<%= render partial: "products_view" %>
+
+<br/>
+<br/>
+<br/>
+
+<table>
+  <thead>
+  <tr>
+    <th>First order date</th>
+    <th>First ship date</th>
+    <th>Availability date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @marketing_product.try(:first_order_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= @marketing_product.try(:first_ship_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= @marketing_product.try(:availability_date).try(:strftime, "%m/%d/%Y at %I:%M%p") %></td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="row">
+  <br>
+  <br>
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th>
+        Serving description
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+        <td>
+          <%= @marketing_product.serving_description %>
+        </td>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th>
+        Ingredients description
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <td>
+        <%= @marketing_product.ingredients_description %>
+      </td>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="row">
+  <br>
+  <br>
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th>
+          Benefits description
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <td>
+        <%= @marketing_product.benefits_description %>
+      </td>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th>
+          Product description
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <td>
+        <%= @marketing_product.product_description %>
+      </td>
+      </tbody>
+    </table>
+  </div>
+
+</div>

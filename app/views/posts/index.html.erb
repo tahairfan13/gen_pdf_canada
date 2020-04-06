@@ -15,6 +15,7 @@
         <td><%= post.try(:product).try(:name) %></td>
         <td><%= post.try(:product).try(:gtin) %></td>
         <td><%= link_to "Download PDF", get_pdf_post_path(post), class: 'btn btn-success', style: 'color:#fff' %></td>
+
         <td><%= link_to 'View More information', post, class: "btn btn-primary", style: 'color:#fff' %></td>
         <td><%= link_to 'Edit', edit_post_path(post), class: "btn btn-info", style: 'color:#fff' %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", style: 'color:#fff' %></td>

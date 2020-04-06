@@ -14,6 +14,7 @@
         <td><%= product.try(:product).try(:name) %></td>
         <td><%= product.try(:product).try(:product_type) %></td>
         <td><%= product.try(:product).try(:gtin) %></td>
+        <td><%= link_to "Download PDF", market_pdf_marketing_product_path(product), class: 'btn btn-success', style: 'color:#fff' %></td>
       </tr>
       </tbody>
     </table>
