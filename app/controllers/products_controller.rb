@@ -65,6 +65,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :product_type, :parent_gtin, :gtin)
+      params.require(:product).permit(:name, :product_type, :parent_gtin, :gtin, :code)
     end
 end

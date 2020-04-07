@@ -29,6 +29,7 @@
     <th>Name</th>
     <th>Product Type</th>
     <th>GTIN Number</th>
+    <th>Code</th>
   </tr>
   </thead>
   <tbody>
@@ -36,6 +37,7 @@
     <td><%= product.try(:name) %></td>
     <td><%= product.try(:product_type) %></td>
     <td><%= product.try(:gtin) %></td>
+    <td><%= product.try(:code) %></td>
   </tr>
   </tbody>
 </table>
