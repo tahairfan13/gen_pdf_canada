@@ -1,0 +1,49 @@
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+  }
+
+  th,
+  td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+  }
+
+  th {
+    text-align: center;
+  }
+  th {
+    background-color: #55608f;
+    color: white;
+  }
+</style>
+
+<% if products.length > 0 %>
+  <% products.each do |product| %>
+    <% if product.marketing_product.nil? %>
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Product Type</th>
+          <th>GTIN Number</th>
+          <th colspan="2"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><%= product.try(:name) %></td>
+          <td><%= product.try(:product_type) %></td>
+          <td><%= product.try(:gtin) %></td>
+          <td><%= link_to "Add marketing information", new_marketing_product_path(product_id: product.id), class: "btn btn-success", style: "color: #fff" %></td>
+        </tr>
+        </tbody>
+      </table>
+      <% end %>
+  <% end %>
+<% end %>

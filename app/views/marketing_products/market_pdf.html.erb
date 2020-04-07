@@ -28,143 +28,159 @@
   }
 </style>
 
+<html>
 
-<div>
-  <%= wicked_pdf_image_tag "logo.png", style: "width:350px; height: 150px" %>
-</div>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  </head>
 
-<br/>
-<br/>
-<br/>
+  <body>
+    <div>
+      <%= wicked_pdf_image_tag "logo.png", style: "width:350px; height: 150px" %>
+    </div>
 
-<% if @product %>
-  <%= render partial: "products/product_list", locals: {product: @product} %>
-<% end %>
+    <br/>
+    <br/>
+    <br/>
 
-<br/>
-<br/>
-<br/>
+    <% if @product %>
+      <%= render partial: "products/product_list", locals: {product: @product} %>
+    <% end %>
 
-<table>
-  <thead>
-  <tr>
-    <th>First order date</th>
-    <th>First ship date</th>
-    <th>Availability date</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td><%= @marketing_product.try(:first_order_date).try(:strftime, "%m/%d/%Y") %></td>
-    <td><%= @marketing_product.try(:first_ship_date).try(:strftime, "%m/%d/%Y") %></td>
-    <td><%= @marketing_product.try(:availability_date).try(:strftime, "%m/%d/%Y") %></td>
-  </tr>
-  </tbody>
-</table>
+    <br/>
+    <br/>
+    <br/>
 
-<div class="row">
-  <br>
-  <br>
-  <div class="col-md-6">
     <table>
       <thead>
       <tr>
-        <th>
-          Serving description English
-        </th>
-        <th>
-          Serving description french
-        </th>
+        <th>First order date</th>
+        <th>First ship date</th>
+        <th>Availability date</th>
+        <th>Consumer support number</th>
       </tr>
       </thead>
       <tbody>
+      <tr>
+        <td><%= @marketing_product.try(:first_order_date).try(:strftime, "%m/%d/%Y") %></td>
+        <td><%= @marketing_product.try(:first_ship_date).try(:strftime, "%m/%d/%Y") %></td>
+        <td><%= @marketing_product.try(:availability_date).try(:strftime, "%m/%d/%Y") %></td>
+        <td><%= @marketing_product.try(:consumer_support_number) %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="row">
+      <br>
+      <br>
+      <div class="col-md-6">
+        <table>
+          <thead>
+          <tr>
+            <th>
+              Serving description
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <td>
+            <%= @marketing_product.serving_description %>
+          </td>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+      <br>
+      <div class="col-md-6">
+        <table>
+          <thead>
+          <tr>
+            <th>
+              Ingredients description
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <td>
+            <%= @marketing_product.ingredients_description %>
+          </td>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <br>
+      <br>
+      <div class="col-md-6">
+        <table>
+          <thead>
+          <tr>
+            <th>
+              Benefits description
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <td>
+            <%= @marketing_product.benefits_description %>
+          </td>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="col-md-6">
+        <table>
+          <thead>
+          <tr>
+            <th>
+              Product description
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <td>
+            <%= @marketing_product.product_description %>
+          </td>
+          </tbody>
+        </table>
+      </div>
+
+      <table>
+        <thead>
+        <tr>
+          <th>
+            Preparation and cooking suggestions
+          </th>
+        </tr>
+        </thead>
+        <tbody>
         <td>
-          <%= @marketing_product.serving_description %>
+          <%= @marketing_product.preparation_and_cooking_suggestions %>
         </td>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+        <tr>
+          <th>
+            Extra Information
+          </th>
+        </tr>
+        </thead>
+        <tbody>
         <td>
-          <%= @marketing_product.serving_description_french %>
+          <%= @marketing_product.information %>
         </td>
-      </tbody>
-    </table>
-  </div>
+        </tbody>
+      </table>
 
-  <br>
-  <br>
-  <div class="col-md-6">
-    <table>
-      <thead>
-      <tr>
-        <th>
-          Ingredients description
-        </th>
-        <th>
-          Ingredients description french
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <td>
-        <%= @marketing_product.ingredients_description %>
-      </td>
-      <td>
-        <%= @marketing_product.ingredients_description_french %>
-      </td>
-      </tbody>
-    </table>
-  </div>
-
-</div>
-
-<div class="row">
-  <br>
-  <br>
-  <div class="col-md-6">
-    <table>
-      <thead>
-      <tr>
-        <th>
-          Benefits description
-        </th>
-        <th>
-          Benefits description French
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <td>
-        <%= @marketing_product.benefits_description %>
-      </td>
-      <td>
-        <%= @marketing_product.benefits_description_french %>
-      </td>
-      </tbody>
-    </table>
-  </div>
-
-  <br>
-  <br>
-
-  <div class="col-md-6">
-    <table>
-      <thead>
-      <tr>
-        <th>
-          Product description
-        </th>
-        <th>
-          Product description french
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <td>
-        <%= @marketing_product.product_description %>
-      </td>
-      <td>
-        <%= @marketing_product.product_description_french %>
-      </td>
-      </tbody>
-    </table>
-  </div>
-
-</div>
+    </div>
+  </body>
+</html>

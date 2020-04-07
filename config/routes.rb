@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'reject'
     member do
       get :market_pdf
+      get :market_pdf_french
     end
   end
   get 'marketing/index'

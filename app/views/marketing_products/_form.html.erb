@@ -54,10 +54,27 @@
 
     <%= form.label :benefits_description_french %>
     <%= form.text_field :benefits_description_french, class:'form-control' %>
+
+    <%= form.label :preparation_and_cooking_suggestions %>
+    <%= form.text_field :preparation_and_cooking_suggestions, class:'form-control' %>
+
+    <%= form.label :preparation_and_cooking_suggestions_french %>
+    <%= form.text_field :preparation_and_cooking_suggestions_french, class:'form-control' %>
+
+    <%= form.label :information %>
+    <%= form.text_field :information, class:'form-control' %>
+
+    <%= form.label :information_french %>
+    <%= form.text_field :information_french, class:'form-control' %>
+
+    <%= form.label :consumer_support_number %>
+    <%= form.number_field :consumer_support_number, class:'form-control' %>
+
   </div>
 
   <div class="actions">
-    <%= form.submit "Submit", class:'btn btn-primary' %>
+    <%= form.submit "Proceed", class:'btn btn-primary' %>
+    <%= form.submit 'save', class: 'btn btn-success' %>
     <% if @product %>
       <%= link_to "reject product", marketing_product_reject_path(@product), class: 'btn btn-danger', style: 'color: #fff' %>
     <% end %>

@@ -24,11 +24,17 @@ class MarketingProductsController < ApplicationController
     respond_to do |format|
       if @marketing_product.save
         product = Product.find_by(id: @marketing_product.product_id)
-        if product.update(approved: true, ignore: false)
+        if params[:commit] == 'save'
+          product.ignore = false
+        else
+          product.ignore = false
+          product.approved = true
+        end
+        if product.save
           format.html { redirect_to  marketing_index_path, notice: 'market information successfully submitted' }
           format.json { render :show, status: :created, location: @marketing_product }
         else
-          format.html { render :new }
+          format.html { redirect_to  marketing_index_path, notice: 'market information error' }
           format.json { render json: @marketing_product.errors, status: :unprocessable_entity }
         end
       else
@@ -41,11 +47,16 @@ class MarketingProductsController < ApplicationController
   def update
     respond_to do |format|
       if @marketing_product.update(marketing_product_params)
-        format.html { redirect_to @marketing_product, notice: 'Marketing product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @marketing_product }
+        product = Product.find_by(id: @marketing_product.product_id)
+        if product.update(approved: true, ignore: false)
+          format.html { redirect_to  marketing_index_path, notice: 'market information successfully submitted' }
+          format.json { render :show, status: :created, location: @marketing_product }
+        else
+          format.html { redirect_to marketing_index_path, notice: 'Unable to proceed Marketing product.'  }
+          format.json { render json: @marketing_product.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render :edit }
-        format.json { render json: @marketing_product.errors, status: :unprocessable_entity }
+        format.html { redirect_to marketing_index_path, notice: 'Unable to proceed Marketing product.'  }
       end
     end
   end
@@ -56,8 +67,17 @@ class MarketingProductsController < ApplicationController
     render :pdf => "Report Pdf", :layout => false, :template => "marketing_products/market_pdf"
   end
 
+  def market_pdf_french
+    @marketing_product = MarketingProduct.find(params[:id])
+    @product = @marketing_product.product
+    render :pdf => "Report Pdf", :layout => false, :template => "marketing_products/market_pdf_french"
+  end
+
   def reject
     @product = Product.find_by(id: params[:marketing_product_id])
+    if @product.marketing_product
+      @product.marketing_product.destroy
+    end
     if @product and @product.update(ignore: true)
        redirect_to marketing_index_path, notice: 'product rejected'
     else
@@ -79,6 +99,22 @@ class MarketingProductsController < ApplicationController
     end
 
     def marketing_product_params
-      params.require(:marketing_product).permit(:first_order_date, :first_ship_date, :availability_date, :product_description,:product_description_french, :serving_description, :serving_description_french, :ingredients_description, :ingredients_description_french, :benefits_description, :benefits_description_french, :product_id)
+      params.require(:marketing_product).permit(:first_order_date,
+                                                :first_ship_date,
+                                                :availability_date,
+                                                :product_description,
+                                                :product_description_french,
+                                                :serving_description,
+                                                :serving_description_french,
+                                                :ingredients_description,
+                                                :ingredients_description_french,
+                                                :benefits_description,
+                                                :benefits_description_french,
+                                                :preparation_and_cooking_suggestions,
+                                                :preparation_and_cooking_suggestions_french,
+                                                :information,
+                                                :information_french,
+                                                :consumer_support_number,
+                                                :product_id)
     end
 end
