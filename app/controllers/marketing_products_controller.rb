@@ -48,7 +48,13 @@ class MarketingProductsController < ApplicationController
     respond_to do |format|
       if @marketing_product.update(marketing_product_params)
         product = Product.find_by(id: @marketing_product.product_id)
-        if product.update(approved: true, ignore: false)
+        if params[:commit] == 'save'
+          product.ignore = false
+        else
+          product.ignore = false
+          product.approved = true
+        end
+        if product.save
           format.html { redirect_to  marketing_index_path, notice: 'market information successfully submitted' }
           format.json { render :show, status: :created, location: @marketing_product }
         else

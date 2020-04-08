@@ -76,8 +76,9 @@
     <%= form.submit "Proceed", class:'btn btn-primary' %>
     <%= form.submit 'save', class: 'btn btn-success' %>
     <% if @product %>
-      <%= link_to "reject product", marketing_product_reject_path(@product), class: 'btn btn-danger', style: 'color: #fff' %>
+      <%= link_to "Reject", marketing_product_reject_path(@product), class: 'btn btn-danger', style: 'color: #fff' %>
     <% end %>
+    <%= link_to 'Return', marketing_index_path, class: 'btn btn-warning', style: 'color:#fff'  %>
   </div>
 
 
