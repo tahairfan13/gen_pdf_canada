@@ -23,13 +23,13 @@
   <div class="form-group">
 
     <%= form.label :availability_date %>
-    <%= form.search_field :availability_date, class: "form-control border", type: "date" %>
+    <%= form.date_select :availability_date, class: "form-control" %>
 
     <%= form.label :first_order_date %>
-    <%= form.search_field :first_order_date, class: "form-control border", type: "date" %>
+    <%= form.date_select :first_order_date, class: "form-control" %>
 
     <%= form.label :first_ship_date %>
-    <%= form.search_field :first_ship_date, class: "form-control border", type: "date" %>
+    <%= form.date_select :first_ship_date, class: "form-control" %>
 
     <%= form.label :product_description %>
     <%= form.text_field :product_description, class:'form-control' %>
