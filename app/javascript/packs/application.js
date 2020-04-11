@@ -10,7 +10,6 @@ require("channels")
 import "bootstrap"
 import "jquery/dist/jquery"
 import "popper.js/dist/popper"
-import "moments"
 import "bootstrap-datetimepicker/src/js/bootstrap-datetimepicker"
 import "nouislider/distribute/nouislider.min"
 import "typed/src/typeCheck"
