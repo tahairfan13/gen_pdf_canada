@@ -1386,11 +1386,6 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap-datetimepicker@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/bootstrap-datetimepicker/-/bootstrap-datetimepicker-0.0.7.tgz#a98312648894b81915531b057ff742835843f971"
-  integrity sha1-qYMSZIiUuBkVUxsFf/dCg1hD+XE=
-
 bootstrap@4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
@@ -6978,11 +6973,6 @@ type-is@~1.6.17, type-is@~1.6.18:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.24"
-
-typed@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/typed/-/typed-0.3.3.tgz#93045fd29294f90f9f19b612002d2766c680ae17"
-  integrity sha1-kwRf0pKU+Q+fGbYSAC0nZsaArhc=
 
 typedarray@^0.0.6:
   version "0.0.6"
