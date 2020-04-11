@@ -7,9 +7,13 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "4.3.1",
-    "jquery": "^3.4.1",
+    "bootstrap-datetimepicker": "^0.0.7",
+    "jquery": "^3.5.0",
+    "moments": "^0.0.2",
+    "nouislider": "^14.2.0",
     "popper.js": "^1.16.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "typed": "^0.3.3"
   },
   "version": "0.1.0",
   "devDependencies": {
